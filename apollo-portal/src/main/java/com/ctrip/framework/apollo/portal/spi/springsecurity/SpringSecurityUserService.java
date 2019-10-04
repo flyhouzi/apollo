@@ -47,7 +47,6 @@ public class SpringSecurityUserService implements UserService {
   @Transactional
   public void createOrUpdate(UserPO user) {
     String username = user.getUsername();
-
     User userDetails = new User(username, encoder.encode(user.getPassword()), authorities);
 
     if (userDetailsManager.userExists(username)) {
@@ -101,6 +100,5 @@ public class SpringSecurityUserService implements UserService {
 
     return result;
   }
-
 
 }

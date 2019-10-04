@@ -1,6 +1,5 @@
 Use ApolloPortalDB;
-------------------------------------- 新增表--------------------------------------------
--- 设置尝试次数
+
 CREATE TABLE IF NOT EXISTS `Attempts` (
   `Id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增Id',
   `IP` varchar(64) NOT NULL,
@@ -10,9 +9,10 @@ CREATE TABLE IF NOT EXISTS `Attempts` (
   `OutTime` int(11),
   PRIMARY KEY (`Id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
---------------------------------------表更改----------------------------------------------
+
 
 DROP PROCEDURE IF EXISTS `TableUpdate`;
+
 CREATE PROCEDURE `TableUpdate`()
 BEGIN
     -- 添加IP字段
